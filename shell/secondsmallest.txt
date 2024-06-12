@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Enter numbers separated by spaces:"
+read -r input
+
+# Use a here-string to pass the input to sort command
+sorted_numbers=$(echo "$input" | tr ' ' '\n' | sort -n | tr '\n' ' ')
+
+echo "Sorted numbers in ascending order:"
+echo "$sorted_numbers"
+
+second_number=$(echo "$sorted_numbers" | awk '{print $2}')
+
+echo "The second number is: $second_number"
