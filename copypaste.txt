@@ -1,0 +1,6 @@
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+sudo mkdir /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+sudo /mnt/cdrom/VBoxLinuxAdditions.run
+sudo reboot
