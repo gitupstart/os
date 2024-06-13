@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Enter numbers separated by spaces:"
+read -r input
+
+# Use a here-string to pass the input to sort command
+sorted_numbers=$(echo "$input" | tr ' ' '\n' | sort -nr | tr '\n' ' ')
+
+# Extract the second number using awk
+second_number=$(echo "$sorted_numbers" | awk '{print $1}')
+
+echo "The largest number is: $second_number"
+
+sort_numbers=$(echo "$input" | tr ' ' '\n' | sort -n | tr '\n' ' ')
+
+second_number1=$(echo "$sort_numbers" | awk '{print $1}')
+
+echo "The smallest  number is: $second_number1"
